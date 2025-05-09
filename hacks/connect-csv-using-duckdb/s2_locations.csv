@@ -1,0 +1,17 @@
+locationid,description,locationtype,parentid
+1,india,country,null
+2,west,zone,1
+3,east,zone,1
+4,maharashtra,state,2
+5,goa,state,2
+6,odisa,state,3
+7,westbangal,state,3
+8,pune,district,4
+9,kolhapur,district,4
+10,kothrud,market,8
+11,bavdhan,market,8
+12,panji,district,5
+13,madgaon,market,12
+14,kalkotta,district,7
+15,lakecity,market,14
+16,panhala,market,9
