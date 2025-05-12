@@ -1,0 +1,12 @@
+.ipynb_checkpoints/*.*
+machine-learning/.ipynb_checkpoints/*.*
+machine-learning/ml-using-adventureDW/.ipynb_checkpoints/*.*
+machine-learning/ml-using-adventureDW/Customer-Segmentation-Clustering/.ipynb_checkpoints/*.*
+machine-learning/ml-using-adventureDW/MarketBasketAnalysis-AssociationRules/.ipynb_checkpoints/*.*
+machine-learning/ml-using-adventureDW/sales-forecasting/.ipynb_checkpoints/*.*
+docs/.ipynb_checkpoints/*.*
+hacks/.ipynb_checkpoints/*.*
+hacks/connect-csv-using-duckdb/.ipynb_checkpoints/*.*
+hacks/deploy-fastapi-in-docker/.ipynb_checkpoints/*.*
+hacks/deploy-fastapi-on-ubuntu/.ipynb_checkpoints/*.*
+
