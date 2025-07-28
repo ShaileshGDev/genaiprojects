@@ -1,0 +1,26 @@
+
+{
+  "mode": "sftp",
+  "network": {
+    "username": "sg",
+    "password": "sg",
+    "domain": ""  
+  },
+  "sftp": {
+    "host": "172.25.148.202",
+    "port": 22,
+    "username": "sftpuser",
+    "password": "sg",
+    "base_path": "/sftpfiles"
+  },
+  "image_processing": {
+    "resize": true,
+    "max_width": 1024,
+    "max_height": 1024,
+    "quality": 70
+  },
+  "logs_root": "\\\\192.168.1.15\\temp\\LOGS",
+  "folders_to_process_csv": "folders-to-process-ftp.csv",
+  "backup_folder_root": "/sftpfiles",
+  "processed_images_root": "processed"
+}
