@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\projects\\demo-pocs\\2025\\MS\\azure-demo-oct-2025\\banking-multi-agent-workshop\\csharp\\src\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3748CF64-765F-4175-A30A-486CF4B5DD05}|ChatInfrastructure\\ChatInfrastructure.csproj|e:\\projects\\demo-pocs\\2025\\ms\\azure-demo-oct-2025\\banking-multi-agent-workshop\\csharp\\src\\chatinfrastructure\\services\\semantickernelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3748CF64-765F-4175-A30A-486CF4B5DD05}|ChatInfrastructure\\ChatInfrastructure.csproj|solutionrelative:chatinfrastructure\\services\\semantickernelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3748CF64-765F-4175-A30A-486CF4B5DD05}|ChatInfrastructure\\ChatInfrastructure.csproj|e:\\projects\\demo-pocs\\2025\\ms\\azure-demo-oct-2025\\banking-multi-agent-workshop\\csharp\\src\\chatinfrastructure\\factories\\chatfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3748CF64-765F-4175-A30A-486CF4B5DD05}|ChatInfrastructure\\ChatInfrastructure.csproj|solutionrelative:chatinfrastructure\\factories\\chatfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3748CF64-765F-4175-A30A-486CF4B5DD05}|ChatInfrastructure\\ChatInfrastructure.csproj|e:\\projects\\demo-pocs\\2025\\ms\\azure-demo-oct-2025\\banking-multi-agent-workshop\\csharp\\src\\chatinfrastructure\\logs\\autofunctioninvocationloggingfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3748CF64-765F-4175-A30A-486CF4B5DD05}|ChatInfrastructure\\ChatInfrastructure.csproj|solutionrelative:chatinfrastructure\\logs\\autofunctioninvocationloggingfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AutoFunctionInvocationLoggingFilter.cs",
+              "DocumentMoniker": "E:\\projects\\demo-pocs\\2025\\MS\\azure-demo-oct-2025\\banking-multi-agent-workshop\\csharp\\src\\ChatInfrastructure\\Logs\\AutoFunctionInvocationLoggingFilter.cs",
+              "RelativeDocumentMoniker": "ChatInfrastructure\\Logs\\AutoFunctionInvocationLoggingFilter.cs",
+              "ToolTip": "E:\\projects\\demo-pocs\\2025\\MS\\azure-demo-oct-2025\\banking-multi-agent-workshop\\csharp\\src\\ChatInfrastructure\\Logs\\AutoFunctionInvocationLoggingFilter.cs",
+              "RelativeToolTip": "ChatInfrastructure\\Logs\\AutoFunctionInvocationLoggingFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T12:55:33.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SemanticKernelService.cs",
+              "DocumentMoniker": "E:\\projects\\demo-pocs\\2025\\MS\\azure-demo-oct-2025\\banking-multi-agent-workshop\\csharp\\src\\ChatInfrastructure\\Services\\SemanticKernelService.cs",
+              "RelativeDocumentMoniker": "ChatInfrastructure\\Services\\SemanticKernelService.cs",
+              "ToolTip": "E:\\projects\\demo-pocs\\2025\\MS\\azure-demo-oct-2025\\banking-multi-agent-workshop\\csharp\\src\\ChatInfrastructure\\Services\\SemanticKernelService.cs",
+              "RelativeToolTip": "ChatInfrastructure\\Services\\SemanticKernelService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T12:53:32.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChatFactory.cs",
+              "DocumentMoniker": "E:\\projects\\demo-pocs\\2025\\MS\\azure-demo-oct-2025\\banking-multi-agent-workshop\\csharp\\src\\ChatInfrastructure\\Factories\\ChatFactory.cs",
+              "RelativeDocumentMoniker": "ChatInfrastructure\\Factories\\ChatFactory.cs",
+              "ToolTip": "E:\\projects\\demo-pocs\\2025\\MS\\azure-demo-oct-2025\\banking-multi-agent-workshop\\csharp\\src\\ChatInfrastructure\\Factories\\ChatFactory.cs",
+              "RelativeToolTip": "ChatInfrastructure\\Factories\\ChatFactory.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAhwE0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T12:51:21.567Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
