@@ -489,6 +489,138 @@ How to cache embeddings to reduce costs in DSPy RAG
 
 Can I use different embeddings for documents and queries
 
+***
+Yes — you can absolutely use an **alternative** to Azure OpenAI embeddings. A very common option is a local `sentence-transformers` model such as `all-MiniLM-L6-v2`, which can generate embeddings on your machine and work well with FAISS for semantic search. [stephendiehl](https://www.stephendiehl.com/posts/faiss/)
+
+## What changed
+
+I created an updated downloadable project that keeps Azure OpenAI for the final answer generation, but replaces Azure embeddings with a local Sentence Transformers embedding model. This means document chunks and user queries are embedded locally, so you avoid embedding API calls to Azure for retrieval. [dev](https://dev.to/suhavi/using-faiss-for-local-semantic-search-bkh)
+
+## Why this works
+
+FAISS only needs vectors, not specifically Azure vectors, so any embedding model that turns text into consistent numeric vectors can be used. The important rule is that you must use the **same embedding model** for both indexing documents and embedding incoming user queries, otherwise similarity search quality breaks. [huggingface](https://huggingface.co/learn/llm-course/chapter5/6)
+
+## In the updated code
+
+The new version uses:
+- `sentence-transformers/all-MiniLM-L6-v2` for embeddings. [dev](https://dev.to/suhavi/using-faiss-for-local-semantic-search-bkh)
+- `faiss.IndexFlatIP` with normalized embeddings for similarity search, which is a common pattern for semantic retrieval. [stephendiehl](https://www.stephendiehl.com/posts/faiss/)
+- DSPy as the orchestration layer for “retrieve context, then answer with LLM,” which matches DSPy’s general RAG approach of integrating an external retriever with a module pipeline. [vicentereig.github](https://vicentereig.github.io/dspy.rb/advanced/rag/)
+
+## Tradeoff
+
+Using local embeddings reduces API cost and can improve privacy because your document chunks do not need to be sent to an embedding API. The tradeoff is that quality, speed, and hardware needs depend on the local model you choose, and managed embedding services can sometimes outperform smaller open-source models. [tigerdata](https://www.tigerdata.com/blog/finding-the-best-open-source-embedding-model-for-rag)
+
+Would you like the next version to remove Azure OpenAI entirely as well, so both embeddings and answer generation run locally?
+
+***
+# sentence-transformers/all-MiniLM-L6-v2 where is model downloaded from and where it is hosted
+The `sentence-transformers/all‑MiniLM‑L6‑v2` model is:
+
+1. **Hosted on Hugging Face Hub**  
+   - Official page: `https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2` [huggingface](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
+   - This is the canonical location; it’s part of the [`sentence-transformers`](https://huggingface.co/sentence-transformers) organization on Hugging Face. [sbert](https://www.sbert.net/docs/sentence_transformer/pretrained_models.html)
+
+2. **Where it’s downloaded from in code**  
+   When you write in Python:
+
+   ```python
+   from sentence_transformers import SentenceTransformer
+   model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+   ```
+
+   the `sentence-transformers` library:
+
+   - Auto‑downloads the model files (weights, config, tokenizer, pooling layer) from that Hugging Face URL the first time you run it. [huggingface](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/discussions/43)
+   - Stores them in your local Hugging Face cache (usually `~/.cache/huggingface/transformers` or similar). [huggingface](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/discussions/43)
+
+3. **You can also download the model files manually**  
+   - On the Hugging Face model page, you can click the **⬇️ download** button or use `git clone` to get the model directory and put it on an offline machine, then load from the local folder instead of the name. [github](https://github.com/UKPLab/sentence-transformers/issues/1281)
+
+In short: the model is **hosted on Hugging Face**, and your `sentence-transformers` call downloads it from there to your machine unless you override it with a local path.
+
+***
+# I want to host the same locally, for each query it is downloading it again and again
+
+Yes. You should **download the model once, save it on your machine/server, and then load it by local folder path** instead of by Hugging Face model name. When you pass a remote model name like `sentence-transformers/all-MiniLM-L6-v2`, the library may still check the Hub or cache state, but when you pass a local directory path, it loads from disk directly. [stackoverflow](https://stackoverflow.com/questions/65419499/download-pre-trained-sentence-transformers-model-locally)
+
+## Simple idea
+
+Think of it this way:
+
+- `SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")` = “go look for this model online or in cache.” [github](https://github.com/UKPLab/sentence-transformers/issues/2523)
+- `SentenceTransformer("D:/models/all-MiniLM-L6-v2")` = “load this exact local folder.” [stackoverflow](https://stackoverflow.com/questions/73282911/how-to-load-huggingface-model-resource-from-local-disk/73292853)
+
+So for an offline or stable local setup, do this in **two steps**:
+1. Download once.
+2. Load by local path every time. [huggingface](https://huggingface.co/sentence-transformers/all-mpnet-base-v2/discussions/18)
+
+## One-time download
+
+Run this once on a machine with internet:
+
+```python
+from sentence_transformers import SentenceTransformer
+
+model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+model.save("./models/all-MiniLM-L6-v2")
+```
+
+This saves the complete model locally so you can reuse it later from that folder. [zilliz](https://zilliz.com/ai-faq/how-do-you-save-a-finetuned-sentence-transformer-model-and-later-load-it-for-inference-or-deployment)
+
+## Load locally after that
+
+Then change your app code to this:
+
+```python
+from sentence_transformers import SentenceTransformer
+
+model = SentenceTransformer("./models/all-MiniLM-L6-v2")
+```
+
+That tells the library to use your local model directory instead of fetching by remote name. [github](https://github.com/UKPLab/sentence-transformers/issues/1211)
+
+## Updated code change
+
+In your existing project, replace this:
+
+```python
+LOCAL_EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
+```
+
+with something like:
+
+```env
+LOCAL_EMBEDDING_MODEL=./models/all-MiniLM-L6-v2
+```
+
+And keep this code as-is:
+
+```python
+def get_local_embedder(config):
+    return SentenceTransformer(config["LOCAL_EMBEDDING_MODEL"])
+```
+
+Now it will load from your local folder path. This works because `SentenceTransformer` accepts either a model identifier or a filesystem path to a saved model directory. [github](https://github.com/huggingface/transformers/issues/2422)
+
+## Best practice
+
+To avoid internet checks on restricted servers, keep the model inside your project or a fixed server path such as:
+
+- Windows: `D:\\models\\all-MiniLM-L6-v2`
+- Linux: `/opt/models/all-MiniLM-L6-v2`
+
+Then set that exact path in `.env` and use it consistently across environments. Using a local path is the cleanest way to stop repeated remote resolution behavior. [github](https://github.com/open-webui/open-webui/issues/10361)
+
+## Important note
+
+If it still appears to “download again,” common reasons are:
+- you are still using the Hugging Face model name instead of a local path, [github](https://github.com/UKPLab/sentence-transformers/issues/1211)
+- the local folder is incomplete or missing files like `config.json`, [github](https://github.com/UKPLab/sentence-transformers/issues/1264)
+- the process runs in a fresh container/VM each time and loses the cached files between runs. [stackoverflow](https://stackoverflow.com/questions/62261602/downloading-transformers-models-to-use-offline)
+
+Would you like me to generate an updated downloadable project that uses a fixed local model folder like `./models/all-MiniLM-L6-v2` and includes a separate `download_model.py` script?
+
 
 
 
