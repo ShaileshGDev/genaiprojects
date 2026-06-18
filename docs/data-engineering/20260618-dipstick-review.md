@@ -239,103 +239,112 @@ I can turn this into a **structured interview sheet** with:
 Dipstick Review Question Bank
 This table organizes quick technical-depth screening questions across Python, SQL, data engineering, machine learning, and feature engineering by experience band. The domains and question themes align with commonly covered interview areas in current data engineering and ML interview materials. 
 
-Experience	Domain	Q#	Question
-Experience	Domain	Q#	Question
-2-4 years	Python	1	Explain the difference between a list, tuple, set, and dictionary, and where you would use each.
-2-4 years	Python	2	What is the difference between == and is in Python?
-2-4 years	Python	3	How do you handle exceptions in a data pipeline script?
-2-4 years	Python	4	Write a function to deduplicate a list while preserving order.
-2-4 years	Python	5	What are generators, and why are they useful in ETL workloads?
-2-4 years	SQL	1	Write a query to find the second highest salary.
-2-4 years	SQL	2	Explain INNER JOIN, LEFT JOIN, and EXISTS.
-2-4 years	SQL	3	What is the difference between WHERE and HAVING?
-2-4 years	SQL	4	How would you identify duplicate rows in a table?
-2-4 years	SQL	5	What are window functions used for?
-2-4 years	Data engineering	1	What makes an ETL job idempotent?
-2-4 years	Data engineering	2	How do you handle late-arriving data?
-2-4 years	Data engineering	3	What is the difference between batch and incremental loads?
-2-4 years	Data engineering	4	How do you design logging for a pipeline?
-2-4 years	Data engineering	5	What steps would you take if a daily job fails intermittently?
-2-4 years	Machine learning	1	What is the difference between supervised and unsupervised learning?
-2-4 years	Machine learning	2	Explain train, validation, and test splits.
-2-4 years	Machine learning	3	What is overfitting, and how do you detect it?
-2-4 years	Machine learning	4	How do precision and recall differ?
-2-4 years	Machine learning	5	When would you choose logistic regression over linear regression?
-2-4 years	Feature engineering	1	What is feature engineering?
-2-4 years	Feature engineering	2	How do you encode categorical variables?
-2-4 years	Feature engineering	3	How do you treat missing values before modeling?
-2-4 years	Feature engineering	4	What is the difference between normalization and standardization?
-2-4 years	Feature engineering	5	Why might feature scaling matter for some models but not others?
-4-8 years	Python	1	Explain list comprehensions and generator expressions with use cases.
-4-8 years	Python	2	How do you profile Python code for performance?
-4-8 years	Python	3	What are @staticmethod, @classmethod, and instance methods?
-4-8 years	Python	4	How would you structure reusable ETL code in Python?
-4-8 years	Python	5	How do you handle memory-heavy datasets in pandas?
-4-8 years	SQL	1	Write a query using ROW_NUMBER() to remove duplicates.
-4-8 years	SQL	2	Explain how to calculate rolling averages in SQL.
-4-8 years	SQL	3	How would you find gaps in a sequence of dates?
-4-8 years	SQL	4	Compare correlated subqueries and joins.
-4-8 years	SQL	5	When would you use indexing, and what are the trade-offs?
-4-8 years	Data engineering	1	How do you design an incremental pipeline with audit columns?
-4-8 years	Data engineering	2	What is schema evolution, and how do you manage it?
-4-8 years	Data engineering	3	How do you validate source-to-target data quality?
-4-8 years	Data engineering	4	Describe partitioning strategies for large fact tables.
-4-8 years	Data engineering	5	What is the role of orchestration tools in reliable pipelines?
-4-8 years	Machine learning	1	Explain bias-variance tradeoff.
-4-8 years	Machine learning	2	How do you handle class imbalance?
-4-8 years	Machine learning	3	What is cross-validation, and when is it useful?
-4-8 years	Machine learning	4	How do tree-based models differ from linear models?
-4-8 years	Machine learning	5	How do you choose an evaluation metric for an imbalanced problem?
-4-8 years	Feature engineering	1	How would you create time-based features from transaction data?
-4-8 years	Feature engineering	2	Explain target leakage with an example.
-4-8 years	Feature engineering	3	How do you create lag and rolling-window features?
-4-8 years	Feature engineering	4	What is one-hot encoding, and what are its limitations?
-4-8 years	Feature engineering	5	When would you use binning or discretization?
-8-12 years	Python	1	How would you design a Python package for data transformations?
-8-12 years	Python	2	Explain concurrency options in Python for I/O-bound workloads.
-8-12 years	Python	3	How do you implement retries, backoff, and observability in scripts?
-8-12 years	Python	4	What patterns do you use to make code testable and maintainable?
-8-12 years	Python	5	How would you handle configuration across environments?
-8-12 years	SQL	1	Design a query to generate a feature table from transaction and customer tables.
-8-12 years	SQL	2	How do you optimize a slow SQL query?
-8-12 years	SQL	3	Explain star schema vs snowflake schema.
-8-12 years	SQL	4	How do you manage slowly changing dimensions?
-8-12 years	SQL	5	How do you build reproducible point-in-time datasets for ML?
-8-12 years	Data engineering	1	How do you design a data platform for batch plus near-real-time workloads?
-8-12 years	Data engineering	2	How do you ensure data lineage and governance?
-8-12 years	Data engineering	3	What do you monitor in production pipelines?
-8-12 years	Data engineering	4	How would you design backfill handling?
-8-12 years	Data engineering	5	How do you balance cost, freshness, and reliability?
-8-12 years	Machine learning	1	How do you prevent training-serving skew?
-8-12 years	Machine learning	2	What is model drift, and how do you detect it?
-8-12 years	Machine learning	3	How do you compare tree-based models to boosting models?
-8-12 years	Machine learning	4	How do you operationalize model evaluation in production?
-8-12 years	Machine learning	5	How do you explain model performance to non-technical stakeholders?
-8-12 years	Feature engineering	1	How do you build ML-ready tables from event data?
-8-12 years	Feature engineering	2	How do you handle high-cardinality categorical variables?
-8-12 years	Feature engineering	3	When would you use target encoding, and what are the risks?
-8-12 years	Feature engineering	4	How would you create aggregate features at different time windows?
-8-12 years	Feature engineering	5	How do you design reusable feature pipelines?
-12+ years	Python	1	Design a Python-based data platform service that validates, transforms, and publishes datasets across multiple environments.
-12+ years	Python	2	How would you structure a large Python codebase to support multiple teams, CI/CD, tests, and plugin-style transformations?
-12+ years	Python	3	How would you implement observability, retries, dead-letter handling, and idempotency in Python services?
-12+ years	Python	4	How would you choose between synchronous, async, multiprocessing, and distributed execution for different workload types?
-12+ years	SQL	1	Design a SQL layer for analytics and ML feature generation that supports time travel, reproducibility, and auditability.
-12+ years	SQL	2	How would you model data for both BI reporting and feature engineering without creating duplicate logic?
-12+ years	SQL	3	How would you optimize a warehouse for low-cost, high-concurrency analytical queries?
-12+ years	SQL	4	How would you implement point-in-time correctness for training datasets using SQL?
-12+ years	Data engineering	1	Design an end-to-end platform for batch, streaming, and ML feature pipelines with governance and monitoring.
-12+ years	Data engineering	2	How would you decide between ELT, ETL, and hybrid patterns for different source systems?
-12+ years	Data engineering	3	How would you architect ingestion from operational databases into a warehouse while minimizing latency and duplicates?
-12+ years	Data engineering	4	How would you set up schema evolution, contract testing, data quality checks, and rollback strategy?
-12+ years	Data engineering	5	How would you design a multi-tenant data platform with access control and row-level security?
-12+ years	Machine learning	1	Design the lifecycle for a model from feature generation to training, deployment, monitoring, and retraining.
-12+ years	Machine learning	2	How would you decide whether to keep model scoring in Python services, SQL, or embedded in the warehouse?
-12+ years	Machine learning	3	How would you build a robust evaluation framework for offline and online metrics?
-12+ years	Machine learning	4	How would you handle concept drift, data drift, and feedback loops in production?
-12+ years	Machine learning	5	How would you make model decisions explainable to business users and auditors?
-12+ years	Feature engineering	1	Design a feature store or feature-serving architecture for batch and real-time inference.
-12+ years	Feature engineering	2	How would you handle training-serving parity across offline feature pipelines and online inference paths?
+Here is the Markdown table version.
+
+
+
+# Dipstick Review Question Bank
+
+| Experience | Domain | Q# | Question |
+|---|---|---:|---|
+| 2-4 years | Python | 1 | Explain the difference between a list, tuple, set, and dictionary, and where you would use each. |
+| 2-4 years | Python | 2 | What is the difference between `==` and `is` in Python? |
+| 2-4 years | Python | 3 | How do you handle exceptions in a data pipeline script? |
+| 2-4 years | Python | 4 | Write a function to deduplicate a list while preserving order. |
+| 2-4 years | Python | 5 | What are generators, and why are they useful in ETL workloads? |
+| 2-4 years | SQL | 1 | Write a query to find the second highest salary. |
+| 2-4 years | SQL | 2 | Explain `INNER JOIN`, `LEFT JOIN`, and `EXISTS`. |
+| 2-4 years | SQL | 3 | What is the difference between `WHERE` and `HAVING`? |
+| 2-4 years | SQL | 4 | How would you identify duplicate rows in a table? |
+| 2-4 years | SQL | 5 | What are window functions used for? |
+| 2-4 years | Data engineering | 1 | What makes an ETL job idempotent? |
+| 2-4 years | Data engineering | 2 | How do you handle late-arriving data? |
+| 2-4 years | Data engineering | 3 | What is the difference between batch and incremental loads? |
+| 2-4 years | Data engineering | 4 | How do you design logging for a pipeline? |
+| 2-4 years | Data engineering | 5 | What steps would you take if a daily job fails intermittently? |
+| 2-4 years | Machine learning | 1 | What is the difference between supervised and unsupervised learning? |
+| 2-4 years | Machine learning | 2 | Explain train, validation, and test splits. |
+| 2-4 years | Machine learning | 3 | What is overfitting, and how do you detect it? |
+| 2-4 years | Machine learning | 4 | How do precision and recall differ? |
+| 2-4 years | Machine learning | 5 | When would you choose logistic regression over linear regression? |
+| 2-4 years | Feature engineering | 1 | What is feature engineering? |
+| 2-4 years | Feature engineering | 2 | How do you encode categorical variables? |
+| 2-4 years | Feature engineering | 3 | How do you treat missing values before modeling? |
+| 2-4 years | Feature engineering | 4 | What is the difference between normalization and standardization? |
+| 2-4 years | Feature engineering | 5 | Why might feature scaling matter for some models but not others? |
+| 4-8 years | Python | 1 | Explain list comprehensions and generator expressions with use cases. |
+| 4-8 years | Python | 2 | How do you profile Python code for performance? |
+| 4-8 years | Python | 3 | What are `@staticmethod`, `@classmethod`, and instance methods? |
+| 4-8 years | Python | 4 | How would you structure reusable ETL code in Python? |
+| 4-8 years | Python | 5 | How do you handle memory-heavy datasets in pandas? |
+| 4-8 years | SQL | 1 | Write a query using `ROW_NUMBER()` to remove duplicates. |
+| 4-8 years | SQL | 2 | Explain how to calculate rolling averages in SQL. |
+| 4-8 years | SQL | 3 | How would you find gaps in a sequence of dates? |
+| 4-8 years | SQL | 4 | Compare correlated subqueries and joins. |
+| 4-8 years | SQL | 5 | When would you use indexing, and what are the trade-offs? |
+| 4-8 years | Data engineering | 1 | How do you design an incremental pipeline with audit columns? |
+| 4-8 years | Data engineering | 2 | What is schema evolution, and how do you manage it? |
+| 4-8 years | Data engineering | 3 | How do you validate source-to-target data quality? |
+| 4-8 years | Data engineering | 4 | Describe partitioning strategies for large fact tables. |
+| 4-8 years | Data engineering | 5 | What is the role of orchestration tools in reliable pipelines? |
+| 4-8 years | Machine learning | 1 | Explain bias-variance tradeoff. |
+| 4-8 years | Machine learning | 2 | How do you handle class imbalance? |
+| 4-8 years | Machine learning | 3 | What is cross-validation, and when is it useful? |
+| 4-8 years | Machine learning | 4 | How do tree-based models differ from linear models? |
+| 4-8 years | Machine learning | 5 | How do you choose an evaluation metric for an imbalanced problem? |
+| 4-8 years | Feature engineering | 1 | How would you create time-based features from transaction data? |
+| 4-8 years | Feature engineering | 2 | Explain target leakage with an example. |
+| 4-8 years | Feature engineering | 3 | How do you create lag and rolling-window features? |
+| 4-8 years | Feature engineering | 4 | What is one-hot encoding, and what are its limitations? |
+| 4-8 years | Feature engineering | 5 | When would you use binning or discretization? |
+| 8-12 years | Python | 1 | How would you design a Python package for data transformations? |
+| 8-12 years | Python | 2 | Explain concurrency options in Python for I/O-bound workloads. |
+| 8-12 years | Python | 3 | How do you implement retries, backoff, and observability in scripts? |
+| 8-12 years | Python | 4 | What patterns do you use to make code testable and maintainable? |
+| 8-12 years | Python | 5 | How would you handle configuration across environments? |
+| 8-12 years | SQL | 1 | Design a query to generate a feature table from transaction and customer tables. |
+| 8-12 years | SQL | 2 | How do you optimize a slow SQL query? |
+| 8-12 years | SQL | 3 | Explain star schema vs snowflake schema. |
+| 8-12 years | SQL | 4 | How do you manage slowly changing dimensions? |
+| 8-12 years | SQL | 5 | How do you build reproducible point-in-time datasets for ML? |
+| 8-12 years | Data engineering | 1 | How do you design a data platform for batch plus near-real-time workloads? |
+| 8-12 years | Data engineering | 2 | How do you ensure data lineage and governance? |
+| 8-12 years | Data engineering | 3 | What do you monitor in production pipelines? |
+| 8-12 years | Data engineering | 4 | How would you design backfill handling? |
+| 8-12 years | Data engineering | 5 | How do you balance cost, freshness, and reliability? |
+| 8-12 years | Machine learning | 1 | How do you prevent training-serving skew? |
+| 8-12 years | Machine learning | 2 | What is model drift, and how do you detect it? |
+| 8-12 years | Machine learning | 3 | How do you compare tree-based models to boosting models? |
+| 8-12 years | Machine learning | 4 | How do you operationalize model evaluation in production? |
+| 8-12 years | Machine learning | 5 | How do you explain model performance to non-technical stakeholders? |
+| 8-12 years | Feature engineering | 1 | How do you build ML-ready tables from event data? |
+| 8-12 years | Feature engineering | 2 | How do you handle high-cardinality categorical variables? |
+| 8-12 years | Feature engineering | 3 | When would you use target encoding, and what are the risks? |
+| 8-12 years | Feature engineering | 4 | How would you create aggregate features at different time windows? |
+| 8-12 years | Feature engineering | 5 | How do you design reusable feature pipelines? |
+| 12+ years | Python | 1 | Design a Python-based data platform service that validates, transforms, and publishes datasets across multiple environments. |
+| 12+ years | Python | 2 | How would you structure a large Python codebase to support multiple teams, CI/CD, tests, and plugin-style transformations? |
+| 12+ years | Python | 3 | How would you implement observability, retries, dead-letter handling, and idempotency in Python services? |
+| 12+ years | Python | 4 | How would you choose between synchronous, async, multiprocessing, and distributed execution for different workload types? |
+| 12+ years | SQL | 1 | Design a SQL layer for analytics and ML feature generation that supports time travel, reproducibility, and auditability. |
+| 12+ years | SQL | 2 | How would you model data for both BI reporting and feature engineering without creating duplicate logic? |
+| 12+ years | SQL | 3 | How would you optimize a warehouse for low-cost, high-concurrency analytical queries? |
+| 12+ years | SQL | 4 | How would you implement point-in-time correctness for training datasets using SQL? |
+| 12+ years | Data engineering | 1 | Design an end-to-end platform for batch, streaming, and ML feature pipelines with governance and monitoring. |
+| 12+ years | Data engineering | 2 | How would you decide between ELT, ETL, and hybrid patterns for different source systems? |
+| 12+ years | Data engineering | 3 | How would you architect ingestion from operational databases into a warehouse while minimizing latency and duplicates? |
+| 12+ years | Data engineering | 4 | How would you set up schema evolution, contract testing, data quality checks, and rollback strategy? |
+| 12+ years | Data engineering | 5 | How would you design a multi-tenant data platform with access control and row-level security? |
+| 12+ years | Machine learning | 1 | Design the lifecycle for a model from feature generation to training, deployment, monitoring, and retraining. |
+| 12+ years | Machine learning | 2 | How would you decide whether to keep model scoring in Python services, SQL, or embedded in the warehouse? |
+| 12+ years | Machine learning | 3 | How would you build a robust evaluation framework for offline and online metrics? |
+| 12+ years | Machine learning | 4 | How would you handle concept drift, data drift, and feedback loops in production? |
+| 12+ years | Machine learning | 5 | How would you make model decisions explainable to business users and auditors? |
+| 12+ years | Feature engineering | 1 | Design a feature store or feature-serving architecture for batch and real-time inference. |
+| 12+ years | Feature engineering | 2 | How would you handle training-serving parity across offline feature pipelines and online inference paths? |
+| 12+ years | Feature engineering | 3 | How would you manage feature versioning, lineage, and reproducibility? |
+| 12+ years | Feature engineering | 4 | How would you design features for churn, lead scoring, demand forecasting, or fraud use cases? |
+| 12+ years | Feature engineering | 5 | How would you prevent leakage while using historical aggregates, sequences, and time-windowed metrics? |
 12+ years	Feature engineering	3	How would you manage feature versioning, lineage, and reproducibility?
 12+ years	Feature engineering	4	How would you design features for churn, lead scoring, demand forecasting, or fraud use cases?
 12+ years	Feature engineering	5	How would you prevent leakage while using historical aggregates, sequences, and time-windowed metrics?
