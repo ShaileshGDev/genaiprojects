@@ -1,11 +1,11 @@
 # Classic data warehousing challenge
 
 You are an expert datawarehouse architect. 
-I have a report which shows sales achieved status daily. 
-One retailer is associated with multiple distributors
-One distributor has multiple sales person.
-there is indirect relation of sales person to retailer.
-if a Distributor has 5 sales person then in fact table need to put 5 line items for that day.
+- I have a report which shows sales achieved status daily. 
+- One retailer is associated with multiple distributors
+- One distributor has multiple sales person.
+- there is indirect relation of sales person to retailer.
+- if a Distributor has 5 sales person then in fact table need to put 5 line items for that day.
 
 | id | state | retailer_code | dealer_code | TSO Name | invoice_date | moving_sum_final_amount | billedoutlets | baseline | total_potential | percentage_of_baseline | status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
