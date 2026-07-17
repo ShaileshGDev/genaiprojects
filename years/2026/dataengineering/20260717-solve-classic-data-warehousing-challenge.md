@@ -7,12 +7,13 @@ One distributor has multiple sales person.
 there is indirect relation of sales person to retailer.
 if a Distributor has 5 sales person then in fact table need to put 5 line items for that day.
 
-id state	retailer_code	dealer_code	TSO Name	invoice_date	moving_sum_final_amount	billedoutlets	baseline	total_potential	percentage_of_baseline	status
-0	Odisha	100	D301	ABC	2026-06-11 00:00:00.000000	100.0	1	10000	9900.0	1.0	red
-1	Odisha	100	D301	PQR	2026-06-11 00:00:00.000000	100.0	1	10000	9900.0	1.0	red
-2	Odisha	100	D301	XYZ	2026-06-11 00:00:00.000000	100.0	1	10000	9900.0	1.0	red
-3	Odisha	100	D301	GHI	2026-06-11 00:00:00.000000	100.0	1	10000	9900.0	1.0	red
-4	Odisha	100	D301	DEF	2026-06-11 00:00:00.000000	100.0	1	10000	9900.0	1.0	red
+| id | state | retailer_code | dealer_code | TSO Name | invoice_date | moving_sum_final_amount | billedoutlets | baseline | total_potential | percentage_of_baseline | status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | Odisha | 100 | D301 | ABC | 2026-06-11 00:00:00.000000 | 100.0 | 1 | 10000 | 9900.0 | 1.0 | red |
+| 1 | Odisha | 100 | D301 | PQR | 2026-06-11 00:00:00.000000 | 100.0 | 1 | 10000 | 9900.0 | 1.0 | red |
+| 2 | Odisha | 100 | D301 | XYZ | 2026-06-11 00:00:00.000000 | 100.0 | 1 | 10000 | 9900.0 | 1.0 | red |
+| 3 | Odisha | 100 | D301 | GHI | 2026-06-11 00:00:00.000000 | 100.0 | 1 | 10000 | 9900.0 | 1.0 | red |
+| 4 | Odisha | 100 | D301 | DEF | 2026-06-11 00:00:00.000000 | 100.0 | 1 | 10000 | 9900.0 | 1.0 | red |
 
 
 Now I want to solve the number of rows generated for date grid with retailer, distributor, and salesperson 
