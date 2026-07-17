@@ -1,5 +1,26 @@
 # Classic data warehousing challenge
 
+You are an expert datawarehouse architect. 
+I have a report which shows sales achieved status daily. 
+One retailer is associated with multiple distributors
+One distributor has multiple sales person.
+there is indirect relation of sales person to retailer.
+if a Distributor has 5 sales person then in fact table need to put 5 line items for that day.
+
+id state	retailer_code	dealer_code	TSO Name	invoice_date	moving_sum_final_amount	billedoutlets	baseline	total_potential	percentage_of_baseline	status
+0	Odisha	100	D301	ABC	2026-06-11 00:00:00.000000	100.0	1	10000	9900.0	1.0	red
+1	Odisha	100	D301	PQR	2026-06-11 00:00:00.000000	100.0	1	10000	9900.0	1.0	red
+2	Odisha	100	D301	XYZ	2026-06-11 00:00:00.000000	100.0	1	10000	9900.0	1.0	red
+3	Odisha	100	D301	GHI	2026-06-11 00:00:00.000000	100.0	1	10000	9900.0	1.0	red
+4	Odisha	100	D301	DEF	2026-06-11 00:00:00.000000	100.0	1	10000	9900.0	1.0	red
+
+
+Now I want to solve the number of rows generated for date grid with retailer, distributor, and salesperson 
+so if I keep last 90 days snapshot in the system, then I end up having
+90 days * ( 121000 retailer * avg 2 distributor) * average 5 salesperson = 108,900,000 (Ten Crore Eighty Nine Lakh), this number is too high to deal with to show in bold bi dashboard.
+
+please help me with better approach to solve this number of line items in facts table
+
 The problem you are running into is a classic data warehousing challenge: **granularity mismatch combined with a many-to-many relationship**.
 
 By forcing the salesperson dimension directly into a daily snapshot fact table alongside retailers and distributors, you are **cross-joining the relationships**. If a retailer has 2 distributors, and each distributor has 5 salespeople, you are multiplying the same base sales metrics (like `moving_sum_final_amount` or `baseline`) 10 times for a single retailer on a single day. This exponentially inflates your row count and forces you to deal with **double-counting issues** when aggregating values up to the distributor or retailer level.
