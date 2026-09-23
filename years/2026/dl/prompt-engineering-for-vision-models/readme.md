@@ -9,3 +9,5 @@ This course was based off a set of two blog articles from Comet. Explore them he
 - https://www.comet.com/site/?utm_source=dlai&utm_medium=course&utm_campaign=prompt_engineering_for_vision_models&utm_content=dlai_L2
 - https://colab.research.google.com/drive/1jj9BgsFApkqnpPMLCHSDH-5MoL_bjvYq?usp=sharing
 - https://www.comet.com/docs/v2/?utm_source=dlai&utm_medium=course&utm_campaign=prompt_engineering_for_vision_models&utm_content=dlai_L2
+- [float16 versus bfloat16 data type] https://learn.deeplearning.ai/courses/quantization-fundamentals/lesson/3/data-types-and-sizes
+- https://colab.research.google.com/
